@@ -25,16 +25,21 @@ class PostsController < ApplicationController
   end
 
   def upvote
-    post = Post.find(params[:id])
-    post.upvotes += 1
-    post.save!
+    # post = Post.find(params[:id])
+    # post.upvotes += 1
+    # post.save!
 
-    # if post.save
-    #   render json: post, status: 200, location: post
-    # else
-    #   render json: post.errors.full_messages.to_sentence
-    # end
+    # # if post.save
+    # #   render json: post, status: 200, location: post
+    # # else
+    # #   render json: post.errors.full_messages.to_sentence
+    # # end
 
-    render json: post, status: 200, location: post
+    # render json: post, status: 200, location: post
+
+    @post = Post.find(params[:id])
+    @post.upvotes += 1
+    @post.save
+    render json: @post.to_json
   end
 end

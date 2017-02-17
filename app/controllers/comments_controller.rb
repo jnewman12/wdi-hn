@@ -17,12 +17,17 @@ class CommentsController < ApplicationController
   end
 
   def upvote
-    comment = Comment.find(params[:id])
+    # comment = Comment.find(params[:id])
+    # comment.upvote += 1
+    # if comment.save
+    #   render json: comment.to_json, status: 200
+    # else
+    #   render json: comment.errors.full_messages.to_sentence, status: :unprocessable_entity
+    # end
+
+    comment = Comment.find(params[:comment_id])
     comment.upvote += 1
-    if comment.save
-      render json: comment.to_json, status: 200
-    else
-      render json: comment.errors.full_messages.to_sentence, status: :unprocessable_entity
-    end
+
+    render json: comment.to_json
   end
 end
