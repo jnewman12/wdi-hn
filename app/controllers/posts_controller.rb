@@ -36,10 +36,12 @@ class PostsController < ApplicationController
     p '&' * 100
     p post.upvotes
 
-    if post.save
-      render json: post, status: 200, location: post
-    else
-      render json: post.errors.full_messages.to_sentence
-    end
+    # if post.save
+    #   render json: post, status: 200, location: post
+    # else
+    #   render json: post.errors.full_messages.to_sentence
+    # end
+
+    render json: post, status: 200, location: post
   end
 end
