@@ -31,7 +31,7 @@ class PostsController < ApplicationController
     if post.save
       render json: post, status: 200, location: post
     else
-      render json: post.errors.full_messages.to_sentence, status: :unprocessable_entity
+      render json: post.errors.full_messages.to_sentence
     end
   end
 end
