@@ -39,7 +39,7 @@ class PostsController < ApplicationController
 
     @post = Post.find(params[:id])
     @post.upvotes += 1
-    @post.save
+    @post.save!
     render json: @post.to_json
   end
 end
