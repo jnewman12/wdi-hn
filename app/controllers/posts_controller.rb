@@ -15,12 +15,12 @@ class PostsController < ApplicationController
   end
 
   def show
-    post = Post.find(params[:id]).to_json
+    respond_with post = Post.find(params[:id]).to_json
     # render json: {
     #   post: post,
     #   comments: post.comments.to_json
     # }
-    render json: post.to_json, status: 200, location: post
+    #render json: post.to_json, status: 200, location: post
   end
 
   def destroy
