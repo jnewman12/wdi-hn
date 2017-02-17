@@ -26,6 +26,6 @@ end
   Comment.create(
     body: i % 2 == 0 ? Faker::Company.bs : Faker::Hipster.sentence,
     post_id: rand(1..20),
-    upvotes: rand(1..20)
+    upvotes: rand(1..25)
   )
 end
