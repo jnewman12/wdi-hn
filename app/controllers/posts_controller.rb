@@ -15,7 +15,9 @@ class PostsController < ApplicationController
   end
 
   def show
-    respond_with post = Post.find(params[:id]).to_json
+    post = Post.find(params[:id])
+    response = { post: post, comments: post.comments}
+    respond_with response
     # render json: {
     #   post: post,
     #   comments: post.comments.to_json
