@@ -16,10 +16,11 @@ class PostsController < ApplicationController
 
   def show
     post = Post.find(params[:id]).to_json
-    render json: {
-      post: post,
-      comments: post.comments.to_json
-    }
+    # render json: {
+    #   post: post,
+    #   comments: post.comments.to_json
+    # }
+    render json: [post.to_json, post.comments.to_json], status: 200, location: post
   end
 
   def destroy
