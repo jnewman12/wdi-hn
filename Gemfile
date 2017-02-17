@@ -46,4 +46,6 @@ group :development do
 end
 
 gem 'faker'
+gem 'responders', '~> 2.0'
+gem 'rack-cors', :require => 'rack/cors'
 
