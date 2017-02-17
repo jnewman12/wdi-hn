@@ -28,6 +28,14 @@ class PostsController < ApplicationController
     post = Post.find(params[:id])
     post.upvotes += 1
 
+    p '*' * 100
+    p post.upvotes
+
+    post.upvotes += 1
+
+    p '&' * 100
+    p post.upvotes
+
     if post.save
       render json: post, status: 200, location: post
     else
