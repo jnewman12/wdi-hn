@@ -20,7 +20,7 @@ class PostsController < ApplicationController
     #   post: post,
     #   comments: post.comments.to_json
     # }
-    render json: [post.to_json, post.comments.to_json], status: 200, location: post
+    render json: post.to_json, status: 200, location: post
   end
 
   def destroy
