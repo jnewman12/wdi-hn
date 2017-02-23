@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   skip_before_filter :verify_authenticity_token
 
   def index
-    render json: post = Post.all.order('ASC').to_json
+    render json: post = Post.all.order('created_at ASC').to_json
   end
 
   def create
