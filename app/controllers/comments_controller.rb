@@ -17,8 +17,6 @@ class CommentsController < ApplicationController
   end
 
   def upvote
-    p '*' * 100
-    p params
     comment = Comment.find(params[:comment_id])
     comment.upvotes += 1
     comment.save!
