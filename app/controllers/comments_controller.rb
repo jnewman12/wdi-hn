@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
     )
 
     if comment.save
-      render json: comment.to_json, status: :created, location: comment
+      render json: comment.to_json
     else
       render json: comment.errors.full_messages.to_sentence, status: :unprocessable_entity
     end
@@ -20,11 +20,6 @@ class CommentsController < ApplicationController
     comment = Comment.find(params[:comment_id])
     comment.upvotes += 1
     comment.save!
-    # if comment.save
-    #   render json: comment.to_json, status: 200
-    # else
-    #   render json: comment.errors.full_messages.to_sentence, status: :unprocessable_entity
-    # end
     render json: comment.to_json
   end
 end
